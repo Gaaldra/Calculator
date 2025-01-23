@@ -16,7 +16,10 @@ namespace Calculator
 
         private void ChangeCurrentEntry(string entry)
         {
-            currentEntry = currentEntry == "0" ? entry : currentEntry + entry;
+            if (currentEntry.Length < 9)
+            {
+                currentEntry = currentEntry == "0" ? entry : currentEntry + entry;
+            }
         }
 
         private void UpdateVisor()
@@ -168,5 +171,10 @@ namespace Calculator
         private static double Subtract(double entry1, double entry2) => entry1 - entry2;
         private static double Divide(double entry1, double entry2) => entry1 / entry2;
         private static double Multiply(double entry1, double entry2) => entry1 * entry2;
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
